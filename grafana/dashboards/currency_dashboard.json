@@ -1,0 +1,16 @@
+{
+  "title": "Currency Rates Dashboard",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Exchange Rate Over Time",
+      "datasource": "PostgreSQL",
+      "targets": [
+        {
+          "rawSql": "SELECT updated_at, target_currency, exchange_rate FROM stg_exchange_rates",
+          "format": "time_series"
+        }
+      ]
+    }
+  ]
+}

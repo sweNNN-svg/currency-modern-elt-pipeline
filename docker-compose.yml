@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  airbyte:
+    image: airbyte/all-in-one:latest
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+volumes:
+  pg_data:

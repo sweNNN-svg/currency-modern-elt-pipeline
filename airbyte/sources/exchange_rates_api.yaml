@@ -1,0 +1,8 @@
+definition:
+  name: "exchange_rates"
+  sourceType: "http"
+  config:
+    url: "https://v6.exchangerate-api.com/v6/${API_KEY}/latest/TRY"
+    http_method: "GET"
+    json_path: "$.conversion_rates"
+    request_interval_ms: 1000
