@@ -1,5 +1,9 @@
 ## Currency Modern ELT Pipeline
 
+
+
+![ELT Architecture Diagram](https://github.com/sweNNN-svg/currency-modern-elt-pipeline/raw/main/docs/architecture.png)
+
 Bu proje, modern veri mühendisliği araçlarını kullanarak geliştirilen uçtan uca bir ELT (Extract, Load, Transform) çözümüdür. Amaç, döviz kuru verilerini saatlik olarak toplayıp PostgreSQL'e yüklemek, bu verileri dbt ile dönüştürmek ve Grafana ile görselleştirmektir.
 
 ### Bileşenler
